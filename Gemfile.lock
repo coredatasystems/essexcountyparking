@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    adsf (1.2.1)
+      rack (>= 1.0.0)
     colored (1.2)
     concurrent-ruby (1.0.5)
     cri (2.7.1)
@@ -13,12 +15,15 @@ GEM
       ddplugin (~> 1.0)
       hamster (~> 3.0)
       ref (~> 2.0)
+    rack (2.0.1)
     ref (2.0.0)
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
+  adsf
   nanoc (~> 4.7.1)
 
 BUNDLED WITH
