@@ -8,3 +8,7 @@
 ## Setup
 
 `bundle install`
+
+## Compiling the Site
+
+`bundle exec nanoc`
