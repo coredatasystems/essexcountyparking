@@ -3,11 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Secured controlled Parking - Essex County Parking" />
         <meta name="keywords" content="Secured,controlled,Parking,Essex,county,Parking" />
         <title>Essex County Parking - <%= @item[:title] %></title>
         <link rel="stylesheet" href="/stylesheet.css">
-        <!-- Temporary function to check client screen size 
+        <!-- Temporary Script to check client screen size
         <script>
             function getSize() {
                 var w = window,
@@ -17,23 +18,27 @@
                 x = w.innerWidth || e.clientWidth ||   g.clientWidth,
                 y = w.innerHeight|| e.clientHeight|| g.clientHeight;
                 alert(x + ' × ' + y);
-            }    
-        </script> -->
+            }     
+        </script>-->
   </head>
   <body>
-    <div id="header" class="header">
-        <!-- <img src="Logo.png" alt="Logo" width="199" height="90"> -->
-        <div id="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="https://parkonomy.com/en/book/191/colchester/hythe-station-car-park#/?search_string=Essex%20County%20Parking%20Ltd.,%20Hythe%20Station%20Road,%20Colchester,%20United%20Kingdom&range_type=hourly&start_time=2015-12-16T16:00:00&end_time=2015-12-16T17:00:00&consecutive_permits=1&vehicle_type_id=0&overnight_stay=false&sms_confirmation=true&sms_reminder=true&lat=51.885300&lng=0.926981&radius=1.5&extend_booking=false">Prices & Bookings</a></li>
-                <li><a href="contact-us.php">More Information</a></li>
-            </ul>
+    <div id="mainContainer">
+        <div id="header" class="header">
+            <img id="headerLogo" src="Logo.png" alt="Logo" width="199" height="90">
+            <div id="navbarAccentGreen"></div>
+            <div id="navbarAccentAqua"></div>
+            <div id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://parkonomy.com/en/book/191/colchester/hythe-station-car-park#/?search_string=Essex%20County%20Parking%20Ltd.,%20Hythe%20Station%20Road,%20Colchester,%20United%20Kingdom&range_type=hourly&start_time=2015-12-16T16:00:00&end_time=2015-12-16T17:00:00&consecutive_permits=1&vehicle_type_id=0&overnight_stay=false&sms_confirmation=true&sms_reminder=true&lat=51.885300&lng=0.926981&radius=1.5&extend_booking=false">Prices & Bookings</a></li>
+                    <li><a href="contact-us.php">More Information</a></li>
+                </ul>
+            </div>
+            <!-- <button onclick="getSize()" style="position:relative; top:5px; left:5px: width:100px; height:100px;"></button> -->
         </div>
-        <!-- <button onclick="getSize()" style="top:5px; left:5px"></button> -->
-    </div>
-    <div id="main">
-      <%= yield %>
+        <div id="main">
+            <%= yield %>
+        </div>
     </div>
   </body>
 </html>
