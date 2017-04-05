@@ -8,6 +8,7 @@
 /*Setting the background of the body to white.*/
 body {
     background: #fff;
+    min-width: 300px;
 }
 
 /*Setting hyperlinks to have no text decoration to them - no underline, colour change etc.*/
@@ -15,34 +16,25 @@ a {
     text-decoration: none;
 }
 
-a:link,
-a:visited {
-    color: #f30;
-}
-
-a:hover {
-    color: #f90;
-}
-
 /*A DIV which holds all content. This is so the content can be centered horizontally, with margins left and right as to replicate the style of the original site*/
-#mainContainer {
-    position: absolute;
+#wrapper {
     width: 75%;
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.wrapper {
+    position: relative;
     height: 100%;
     left: 0; 
     right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
-    overflow: hidden;
 }
-
 /*--- Header Code ---*/
 
 /*A DIV which holds the header content - logo, banner, navbar.*/
 #header {
     width: 100%;
-    height: 250px;
-    position: absolute;
+    height: 100px;
     color: white;
     font-size: 20px;
 }
@@ -56,11 +48,46 @@ a:hover {
 
 /*A DIV which encapsulates the banner. This is so the banner can correctly scale according to the width of the page.*/
 #bannerContainer {
+    position: relative;
+    margin-left: 205px;
+    top: 8px;
+    height: 80px;
+    width: -webkit-calc(100% - 212px);
+    width: -moz-calc(100% - 212px);
+    width: calc(100% - 212px);
+    background: linear-gradient(lightgreen, green);
+    border: 3px solid white;
+    box-shadow: 0px 0px 8px -3px black;
+}
+
+#bannerTop {    
+    margin-top: 19px;
+}
+
+#bannerBottom {
+    margin-bottom: 19px;
+}
+
+.bannerText {
+    font-size: 18px;
+    color: white;
+    margin-right: 80px;
+    margin-left: 5px;
+}
+
+#parkingLogo {
+    float: right;
     position: absolute;
-    left: 202px;
-    top: 5px;
-    height: 90px;
-    width: calc(100% - 202px);
+    right: 8px;
+    top: 8px;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(#7fb1da,  #003b6d);
+}
+
+#parkingLogo h1 {
+    line-height:64px;
+    text-align: center;
 }
 
 /*Styling of the banner to correctly position it within the header. It scales with it's parent DIV, and is centered both horizontally and vertically. The max-height, max-width 100% attributes ensure that it stays the same height and width.*/
@@ -88,50 +115,54 @@ a:hover {
     -The top is set to 100px to allow space for the logo and banner.
     -The background colour is the same colour as the blue in the Essex County Parking logo.
     -The left is set to 43px to allow for the stylish side accents, whose colours coincide with the logo colors.
-    -The width uses the "calc" method to ensure that the width of the div doesn't overflow past the width of the #mainContainer div.
+    -The width uses the "calc" method to ensure that the width of the div doesn't overflow past the width of the #wrapper div.
 */
 #navbar {
-    z-index: 1;
     height: 50px;
+}
+
+.navbar {
+    z-index: 1;
     position: relative;
     background-color: #1E64AA;
     text-align: center;
-    top: 100px;
-    left: 43px;
-    width: calc(100% - 43px);
+    margin-left: 43px;
+    width: auto;
 }
+
 
 /*A DIV which is placed on the left, coloured with the same green as the Essex County Parking logo, to replicate the original website style.*/
 #navbarAccentGreen {
-    z-index: 1;
-    height: 50px;
-    position: absolute;
     background-color: #54B948;
-    top: 100px;
     width: 16px;
-    left: 0px;
 }
 
 /*A DIV which is placed on the left + 21px, coloured with the same aqua as the Essex County Parking logo, to replicate the original website style.*/
 #navbarAccentAqua {
+    background-color: #00ACA1;
+    width: 17px;
+    margin-left: 5px;
+}
+
+.navbarAccent {
     z-index: 1;
     height: 50px;
-    position: absolute;
-    background-color: #00ACA1;
-    top: 100px;
-    width: 17px;
-    left: 21px;
+    float: left;
 }
 
 /*Styling to be applied to the list elements of the navigation bar. This is so the elements have correct spacing(padding), background-colour and positioning*/
 #navbar li{
-    list-style-type: none;
     display: inline;
-    text-align: center;
-    /*margin: 5px 20px 5px 10px;*/
-    position: relative;
     top: 15px;
     padding: 15px 20px 13px 20px;
+}
+
+.navbar li {
+    list-style-type: none;
+    text-align: center;
+    position: relative;
+    color: white;
+    font-size: 20px;
     transition: background-color 0.25s;
 }
 
@@ -145,41 +176,66 @@ a:hover {
 
 /*A DIV which holds the side accents, as to replicate the orginal style of the old website.*/
 #sideAccents {
-    width: 95px;
-    height: 100%;
-    position: absolute;
-    top: 150px;
+    width: 43px;
+    height: 100vh;
+    float: left;
 }
 
 /*A DIV, coloured with the same green as the Essex County Parking logo, which runs the height of the page to the left.*/
 #sideAccentGreen {
     z-index: 1;
-    height: 100%;
-    position: absolute;
+    height: 100vh;
     background-color: #54B948;
     width: 16px;
-    left: 0px;
+    float: left;
 }
 
 /*A DIV, coloured with the same aqua as the Essex County Parking logo, which runs the height of the page to the left + 21px.*/
 #sideAccentAqua {
     z-index: 1;
-    height: 100%;
-    position: absolute;
+    height: 100vh;
     background-color: #00ACA1;
     width: 17px;
-    left: 21px;
+    margin-left: 5px;
+    float: left;
 }
 
 /*--- Main Code ---*/
 
-/*A DIV which holds the page content. All styling is applied by a separate stylesheet for that page, using the nanoc static-site generator.*/
-#main {
+#mainContainer {
+    margin-left: 43px;
+    height: 100vh;
+}
+
+.main {
+    margin-left: 20px;
+}
+
+/*--- Footer Code ---*/
+
+#footer {
     position: absolute;
-    top: 150px;
-    background-color: aqua;
-    left: 43px;
-    height: 100%;
+    bottom: 0;
+    margin-left: 43px;
+    width: -webkit-calc(100% - 43px);
+    width: -moz-calc(100% - 43px);
+    width: calc(100% - 43px);
+    height: 65px;
+    background-color: #1E64AA;
+}
+
+#footer p{
+    color: white;
+    font-size: 16px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+#tandc {
+    text-decoration: underline;
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
 }
 
 /*--- Responsiveness Code ---*/
@@ -189,25 +245,111 @@ a:hover {
     -Side accents are positioned and sized correctly to follow the new height of the navigation bar.
     -The main DIV has a new top value so that the content stays below the navigation bar.
 */
-@media screen and (max-width: 721px) {
-    #main {
-        position: absolute;
-        top: 200px;
+
+@media screen and (max-width: 319px) {
+    #bannerContainer {
+        display: none;   
+    }
+}
+
+@media screen and (max-width: 330px) {
+    #footer {
+        height: 65px;
+    }
+    #footer p{
+        color: white;
+        font-size: 11px;
+        margin-left: 3px;
+    }
+    #tandc {
+        all: initial;
+        color: white;
+        font-size: 11px;
+        text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    #footer {
+        height: 70px;
+    }
+    #footer p{
+        color: white;
+        font-size: 12px;
+        margin-left: 3px;
+    }
+    #tandc {
+        all: initial;
+        color: white;
+        font-size: 12px;
+        text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 545px) {
+    #footer {
+        height: 85px;
+    }
+    #footer p{
+        color: white;
+        font-size: 16px;
+        margin-left: 3px;
+    }
+    #tandc {
+        all: initial;
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 445px) {
+    .bannerText {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 505px) and (min-width: 445px) {
+    .bannerText {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 703px){
+    #bannerTop {
+        margin-top: 0px;
+    }
+    #bannerBottom {
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 738px) and (min-width: 704px) {
+    #bannerTop {    
+        margin-top: 19px;
+    }
+
+    #bannerBottom {
+        margin-bottom: 19px;
+    }
+}
+
+@media screen and (max-width: 738px) {
+    #wrapper {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    #navbar {
+        height: 100px;
     }
     
-    #navbar {
+    .navbarAccent {
         z-index: 1;
         height: 100px;
-        position: relative;
-        background-color: #1E64AA;
-        text-align: center;
-        top: 100px;
+        float: left;
     }
     
     #navbarAccentGreen {
-        z-index: 1;
-        height: 100px;
-        position: absolute;
         background-color: #54B948;
         top: 100px;
         width: 16px;
@@ -215,9 +357,6 @@ a:hover {
     }
 
     #navbarAccentAqua {
-        z-index: 1;
-        height: 100px;
-        position: absolute;
         background-color: #00ACA1;
         top: 100px;
         width: 17px;
@@ -225,12 +364,17 @@ a:hover {
     }
     
     #navbar li{
-        list-style-type: none;
         display: block;
-        text-align: center;
-        padding: 5.2px 10px 5.2px 10px;
-        position: relative;
         top: 0px;
-        transition: background-color 0.25s;
+        padding: 5.2px 10px 5.2px 10px;
+    }
+}
+
+@media screen and (max-width: 930px) and (min-width: 738px) {
+    #bannerTop {
+        margin-top: 0px;
+    }
+    #bannerBottom {
+        margin-bottom: 0px;
     }
 }

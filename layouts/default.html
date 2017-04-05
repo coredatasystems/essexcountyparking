@@ -10,15 +10,21 @@
         <link rel="stylesheet" href="/stylesheet.css">
   </head>
   <body>
-    <div id="mainContainer">
+    <div id="wrapper" class="wrapper">
         <div id="header" class="header">
             <img id="headerLogo" src="Logo.png" alt="Logo" width="199" height="90">
             <div id="bannerContainer">
-                <img id="headerBanner" src="ecp-banner.png" alt="Guarantee your seat before Colchester North!">
+                <div id="bannerTop" class="bannerText">GUARANTEE your seat before Colchester North</div>
+                <div id="bannerBottom" class="bannerText">On the SAME train with NO EXTRA fare costs</div>
+                <div id="parkingLogo"><h1>P</h1></div>
+                <!--<img id="parkingLogo" src="parkingLogo.png" alt="ParkingLogo" width="64" height="64">-->
+                <!--<img id="headerBanner" src="ecp-banner.png" alt="Guarantee your seat before Colchester North!">-->
             </div>
-            <div id="navbarAccentGreen"></div>
-            <div id="navbarAccentAqua"></div>
-            <div id="navbar">
+        </div>
+        <div id="navbarContainer">
+            <div id="navbarAccentGreen" class="navbarAccent"></div>
+            <div id="navbarAccentAqua" class="navbarAccent"></div>
+            <div id="navbar" class="navbar">
                 <ul>
                     <a href="index.html"><li>Home</li></a>
                     <a href="https://parkonomy.com/en/book/191/colchester/hythe-station-car-park#/?search_string=Essex%20County%20Parking%20Ltd.,%20Hythe%20Station%20Road,%20Colchester,%20United%20Kingdom&range_type=hourly&start_time=2015-12-16T16:00:00&end_time=2015-12-16T17:00:00&consecutive_permits=1&vehicle_type_id=0&overnight_stay=false&sms_confirmation=true&sms_reminder=true&lat=51.885300&lng=0.926981&radius=1.5&extend_booking=false"><li>Prices & Bookings</li></a>
@@ -30,8 +36,16 @@
             <div id="sideAccentGreen"></div>
             <div id="sideAccentAqua"></div>
         </div>
-        <div id="main">
-            <%= yield %>
+        <div id="mainContainer">
+            <div id="main" class="main">
+                <%= yield %>
+            </div>
+        </div>
+        <div id="footer">
+            <p>Hythe Station Road, Colchester, Essex, CO2 8JZ</p>
+            <p>© Essex County Parking Ltd. 2011</p>
+            <p>Email us on: info@essexcountyparking.co.uk</p>
+            <p><span id="tandc"><a>Terms and Conditions</a></span></p>
         </div>
     </div>
   </body>
