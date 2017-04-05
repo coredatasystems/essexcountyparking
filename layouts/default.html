@@ -13,7 +13,9 @@
     <div id="mainContainer">
         <div id="header" class="header">
             <img id="headerLogo" src="Logo.png" alt="Logo" width="199" height="90">
-            <img id="headerBanner" src="ecp-banner.png" alt="Guarantee your seat before Colchester North!" width="602" height="95">
+            <div id="bannerContainer">
+                <img id="headerBanner" src="ecp-banner.png" alt="Guarantee your seat before Colchester North!">
+            </div>
             <div id="navbarAccentGreen"></div>
             <div id="navbarAccentAqua"></div>
             <div id="navbar">
@@ -23,6 +25,10 @@
                     <a href="contact-us.php"><li>More Information</li></a>
                 </ul>
             </div>
+        </div>
+        <div id="sideAccents">
+            <div id="sideAccentGreen"></div>
+            <div id="sideAccentAqua"></div>
         </div>
         <div id="main">
             <%= yield %>
