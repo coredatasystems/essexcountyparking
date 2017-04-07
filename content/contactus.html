@@ -2,36 +2,69 @@
 title: Contact Us
 ---
 <div id="contactContent" class="pageContent">
+    <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
+    <script>
+        function initMap() {
+            var essexcountyparking = {lat: 51.885260, lng: 0.926982};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 18,
+                center: essexcountyparking
+            });
+            var pinColor = "1E64AA";
+            var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+                new google.maps.Size(21, 34),
+                new google.maps.Point(0,0),
+                new google.maps.Point(10, 34));
+            var marker = new google.maps.Marker({
+                position: essexcountyparking,
+                map: map,
+                icon: pinImage,
+                animation: google.maps.Animation.BOUNCE
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCB4oOGGtM3wuwm-9m8caPXbhcpfWgE-8M&callback=initMap"></script>
     <h2 id="contactTitle" class="pageTitle">Contact Us</h2>
     <h3 id="contactSubtitle" class="pageSubtitle">Submit a query:</h3>
-    <form id="contactForm" method="POST" action="http://formspree.io/YOUREMAILHERE">
-        <div id="formNameContainer" class="formContainer">
-            <div id="formNameLabel" class="formText">
-                <label>Name: </label>
+    <div id="contactFormContainer">
+        <form id="contactForm" method="POST" action="http://formspree.io/info@essexcountyparking.co.uk">
+            <div id="formNameContainer" class="formContainer">
+                <div id="formNameLabel" class="formText">
+                    <label>Name: </label>
+                </div>
+                <input id="formName" type="text" name="name" class="formInput">
             </div>
-            <input id="formName" type="text" name="name" class="formInput">
-        </div>
-        <div id="formEmailContainer" class="formContainer">
-            <div id="formEmailLabel" class="formText">
-                <label>Email: </label>
+            <div id="formEmailContainer" class="formContainer">
+                <div id="formEmailLabel" class="formText">
+                    <label>Email: </label>
+                </div>
+                <input id="formEmail" type="email" name="email" class="formInput">
             </div>
-            <input id="formEmail" type="email" name="email" class="formInput">
-        </div>
-        <div id="formMessageContainer" class="formContainer">
-            <div id="formMessageLabel" class="formText">
-                <label>Message: </label>
+            <div id="formMessageContainer" class="formContainer">
+                <div id="formMessageLabel" class="formText">
+                    <label>Message: </label>
+                </div>
+                <textarea id="formMessage" name="message" class="formInput"></textarea>
             </div>
-            <textarea id="formMessage" name="message" class="formInput"></textarea>
-        </div>
-        <div id="formCaptchaContainer">
-            <div id="formCaptcha" class="g-recaptcha" data-sitekey="6LdusxoUAAAAALNXCU7myXFWbA9XZouQzJU9bXTj"></div>
-        </div>
-        <button id="formSubmit" type="submit">Submit your query</button>
-    </form>
+            <button id="formSubmit" type="submit">Submit your query</button>
+        </form>
+    </div>
     <br />
     <br />
     <div id="contactEmailContainer">
         <h3 id="contactEmailSubtitle" class="pageSubtitle">Or send an email to: </h3>
         <p id="contactEmail"><a href="mailto:info@essexcountyparking.co.uk">info@essexcountyparking.co.uk</a></p>
+    </div>
+    <br />
+    <div id="contactTimesContainer">
+        <h3 id="contactOpenTimes" class="pageSubtitle">Opening Times:</h3>
+        <p id="openTimesWeek">Monday - Saturday: 5:30am to 10:00pm</p>
+        <p id="openTimesSun">Sunday: Closed</p>
+    </div>
+    <br />
+    <div id="contactWhereWeAreContainer">
+        <h3 id="contactWhereWeAre" class="pageSubtitle">Where We Are:</h3>
+        <a id="contactAddress" href="https://maps.google.com/maps?ll=51.88526,0.926982&z=18&t=m&hl=en-US&gl=US&mapclient=apiv3&cid=5701168567863823628">Hythe Station Rd, Colchester, CO2 8JZ, UK</a>
+        <div id="map"></div>
     </div>
 </div>

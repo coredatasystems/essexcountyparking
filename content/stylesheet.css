@@ -30,9 +30,10 @@ a {
 
 .wrapper {
     position: relative;
-    height: 100%;
     left: 0; 
-    right: 0; 
+    right: 0;
+    min-height: 100vh;
+    padding-bottom: 65px;
 }
 /*--- Header Code ---*/
 
@@ -59,6 +60,7 @@ a {
     height: 80px;
     width: -webkit-calc(100% - 212px);
     width: -moz-calc(100% - 212px);
+    width: -o-calc(100% - 212px);
     width: calc(100% - 212px);
     background: linear-gradient(lightgreen, green);
     border: 3px solid white;
@@ -184,45 +186,52 @@ a {
 /*A DIV which holds the side accents, as to replicate the orginal style of the old website.*/
 #sideAccents {
     width: 43px;
-    height: 100vh;
-    float: left;
+    height: -webkit-calc(100% - 150px);
+    height: -moz-calc(100% - 150px);
+    height: -o-calc(100% - 150px);
+    height: calc(100% - 150px);
+    position: absolute;
+    top: 150px
 }
 
 /*A DIV, coloured with the same green as the Essex County Parking logo, which runs the height of the page to the left.*/
 #sideAccentGreen {
     z-index: 1;
-    height: 100vh;
     background-color: #54B948;
     width: 16px;
-    float: left;
+    height: 100%;
+    position: absolute;
 }
 
 /*A DIV, coloured with the same aqua as the Essex County Parking logo, which runs the height of the page to the left + 21px.*/
 #sideAccentAqua {
     z-index: 1;
-    height: 100vh;
+    height: 100%;
     background-color: #00ACA1;
     width: 17px;
-    margin-left: 5px;
-    float: left;
+    height: 100%;
+    position: absolute;
+    left: 21px;
 }
 
 /*--- Main Code ---*/
 
 #mainContainer {
     margin-left: 43px;
-    height: 100vh;
+    overflow: hidden;
 }
 
 /*--- Footer Code ---*/
 
 #footer {
-    position: relative;
+    position: absolute;
+    bottom: 0;
     float: left;
     margin-left: 43px;
     margin-top: 15px;
     width: -webkit-calc(100% - 43px);
     width: -moz-calc(100% - 43px);
+    width: -o-calc(100% - 43px);
     width: calc(100% - 43px);
     height: 65px;
     background-color: #1E64AA;
@@ -307,11 +316,20 @@ a {
 #homeCCTV {
     position: relative;
     float: right;
-    right: 100px;
+    right: 15px;
+    margin-bottom: 15px;
+}
+
+#homeSubtitle {
+    font-style: italic;
 }
 
 #contactSubtitle {
     margin-top: 15px;
+}
+
+#contactFormContainer {
+    width: 700px;
 }
 
 #contactForm {
@@ -325,15 +343,44 @@ a {
 }
 
 #formSubmit {
-    margin-left: 130px;
+    margin-left: 100px;
     padding: 5px;
-    border: 1px solid slategray;
-    background-color: #f4f4f4;
+    border: 1px solid #1E64AA;
+    background-color: #1E64AA;
+    color: white;
 }
 
-#contactEmail {
+#contactContent p, #contactContent label, #contactContent a {
+    color: #1E64AA;
+}
+
+#contactEmail p, #contactContent a{
     position: relative;
     margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+#contactEmailSubtitle {
+    font-size: 25px;
+}
+
+/*--- Google Maps JavaScript API ---*/
+#map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+#formName, #formEmail {
+    width: 350px;
+}
+
+#formMessage {
+    width: 550px;
 }
 
 .formText {
@@ -345,17 +392,15 @@ a {
 }
 
 .formInput {
-    border: 1px solid slategray;
+    border: 1px solid #1E64AA;
     background-color: #fff;
-    width: 350px;
     height: 25px;
 }
 
 textarea.formInput{
-    border: 1px solid slategray;
+    border: 1px solid #1E64AA;
     background-color: #fff;
     resize: none;
-    width: 550px;
     height: 125px;
 }
 
@@ -380,7 +425,6 @@ textarea.formInput{
     font-size: 2em;
     color: black;
     font-weight: normal;
-    font-style: italic;
 }
 
 /*--- Responsiveness Code ---*/
@@ -429,6 +473,21 @@ textarea.formInput{
     }
 }
 
+@media screen and (max-width: 360px) {
+    #formName, #formEmail {
+        width: 150px;
+    }
+    #formMessage {
+        width: 150px;
+    }
+    #formSubmit {
+        width: 150px;
+    }
+    #contactEmail a {
+        font-size: 17px;
+    }
+}
+
 @media screen and (max-width: 404px) {
     #parkingLogo {
         margin: 1px;
@@ -453,6 +512,15 @@ textarea.formInput{
     #parkonomyPay {
         top: 3px;
         left: 0px;
+    }
+}
+
+@media screen and (max-width: 410px) and (min-width: 361px) {
+    #formName, #formEmail {
+        width: 150px;
+    }
+    #formMessage {
+        width: 200px;
     }
 }
 
@@ -500,6 +568,15 @@ textarea.formInput{
     }
 }
 
+@media screen and (max-width: 470px) and (min-width: 411px) {
+    #formName, #formEmail {
+        width: 150px;
+    }
+    #formMessage {
+        width: 250px;
+    }
+}
+
 @media screen and (max-width: 545px) and (min-width: 416px){
     #footer {
         height: 85px;
@@ -513,6 +590,15 @@ textarea.formInput{
         all: initial;
         color: white;
         text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 564px) and (min-width: 471px) {
+    #formName, #formEmail {
+        width: 200px;
+    }
+    #formMessage {
+        width: 300px;
     }
 }
 
@@ -572,12 +658,34 @@ textarea.formInput{
     }
 }
 
+@media screen and (max-width: 783px) and (min-width: 546px) {
+    #formName, #formEmail {
+        width: 300px;
+    }
+    #formMessage {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #homeCCTV {
+        float: left;
+        margin-left: 30px;
+    }
+}
+
 @media screen and (max-width: 930px) and (min-width: 738px) {
     #bannerTop {
         margin-top: 0px;
     }
     #bannerBottom {
         margin-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 933px) and (min-width: 784px) {
+    #formMessage {
+        width: 450px;
     }
 }
 
