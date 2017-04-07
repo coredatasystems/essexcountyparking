@@ -362,8 +362,10 @@ a {
     font-size: 20px;
 }
 
-#contactEmailSubtitle {
-    font-size: 25px;
+#contactTimesContainer p {
+    position: relative;
+    margin-left: 15px;
+    font-size: 20px;
 }
 
 /*--- Google Maps JavaScript API ---*/
